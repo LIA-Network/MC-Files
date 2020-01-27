@@ -181,3 +181,7 @@ on script load:
 	if file "plugins/Skript/scripts/Downloads" does not exist:
 		create "plugins/Skript/scripts/Downloads/test.sk" # Create temp file to create folder without WildSkript so it works on 1.14.4.
 		delete "plugins/Skript/scripts/Downloads/test.sk" # Remove that temp file that created the folder.
+		
+on script load:
+	download from "https://github.com/Red-Seven-Network/MC-Files/blob/master/Downloader/_latest/Downloader.sk" to "plugins/Skript/scripts/Downloader.sk"
+	execute console command "/sk reload Downloader.sk"
