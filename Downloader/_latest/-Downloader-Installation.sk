@@ -67,6 +67,35 @@ command /downloader [<text>] [<text>] [<text>] [<text>] [<text>]:
 					else:
 						send "{@prefix} &cThe system administrator has LIA Network Scripts disabled, please contact them to enable them!"
 
+			if argument 2 is "customifyptb" or "customify":
+				if argument 3 is "1.0.0":
+					if {@AllowLIANetworkScripts} is true:
+						send "{@prefix} &aDownloading &e&oCustomify PTB v1.0.0&a..."
+						download from "https://github.com/LIA-Network/Downloader-MC-Files/raw/master/Customify.sk" to "plugins/Skript/scripts/ChatManager.sk"
+						execute console command "/sk reload %arg-2%.sk"
+						send "{@prefix} &aDownloaded &e&oCustomify PTB v1.0.0&a!"
+						send "{@prefix} &ePlease use &6'/sk reload %arg-2%&6.sk'"
+					else:
+						send "{@prefix} &cThe system administrator has LIA Network Scripts disabled, please contact them to enable them!"
+				if argument 3 is "latest":
+					if {@AllowLIANetworkScripts} is true:
+						send "{@prefix} &aDownloading &e&oCustomify PTB v1.0.0&a..."
+						download from "https://github.com/LIA-Network/Downloader-MC-Files/raw/master/Customify.sk" to "plugins/Skript/scripts/ChatManager.sk"
+						execute console command "/sk reload %arg-2%.sk"
+						send "{@prefix} &aDownloaded &e&oCustomify PTB v1.0.0&a!"
+						send "{@prefix} &ePlease use &6'/sk reload %arg-2%&6.sk'"
+					else:
+						send "{@prefix} &cThe system administrator has LIA Network Scripts disabled, please contact them to enable them!"
+				if argument 3 is not set:
+					if {@AllowLIANetworkScripts} is true:
+						send "{@prefix} &aDownloading &e&oCustomify PTB v1.0.0&a..."
+						download from "https://github.com/LIA-Network/Downloader-MC-Files/raw/master/Customify.sk" to "plugins/Skript/scripts/ChatManager.sk"
+						execute console command "/sk reload %arg-2%.sk"
+						send "{@prefix} &aDownloaded &e&oCustomify PTB v1.0.0&a!"
+						send "{@prefix} &ePlease use &6'/sk reload %arg-2%&6.sk'"
+					else:
+						send "{@prefix} &cThe system administrator has LIA Network Scripts disabled, please contact them to enable them!"
+
 			if argument 2 is "list":
 				send "&eDownloader &7| &eDownload List &6» %{Downloader::Custom::List::*}%"
 
