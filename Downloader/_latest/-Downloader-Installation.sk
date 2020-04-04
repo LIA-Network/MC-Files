@@ -67,58 +67,64 @@ command /downloader [<text>] [<text>] [<text>] [<text>] [<text>]:
 					else:
 						send "{@prefix} &cThe system administrator has LIA Network Scripts disabled, please contact them to enable them!"
 
+
+
+
+
 			if argument 2 is "customifyptb" or "customify":
 				if argument 3 is "1.0.0":
 					if {@AllowLIANetworkScripts} is true:
 						send "{@prefix} &aDownloading &e&oCustomify PTB v1.0.0&a..."
 						download from "https://github.com/LIA-Network/Downloader-MC-Files/raw/master/Customify.sk" to "plugins/Skript/scripts/Customify.sk"
-						execute console command "/sk reload %arg-2%.sk"
+						execute console command "/sk reload Customify.sk"
 						send "{@prefix} &aDownloaded &e&oCustomify PTB v1.0.0&a!"
 
 						wait 2 seconds
 
 						send "{@prefix} &aDownloading &e&oCustomify PTB Data v1.0.0&a..."
 						download from "https://github.com/LIA-Network/Downloader-MC-Files/raw/master/CustomifyData.zip" to "plugins/Skript/scripts/CustomifyData.zip"
-						extract "plugins/Skript/scripts/CustomifyData.zip" to "plugins/Skript/scripts/"
+						#extract "plugins/Skript/scripts/CustomifyData.zip" to "plugins/Skript/scripts/"
+						send "{@prefix} &ePlease extract &6CustomifyData.zip in your scripts folder!"
 						send "{@prefix} &aDownloaded &e&oCustomify PTB Data v1.0.0&a!"
-
-						send "{@prefix} &ePlease use &6'/sk reload %arg-2%&6.sk'"
 					else:
 						send "{@prefix} &cThe system administrator has LIA Network Scripts disabled, please contact them to enable them!"
 				if argument 3 is "latest":
 					if {@AllowLIANetworkScripts} is true:
 						send "{@prefix} &aDownloading &e&oCustomify PTB v1.0.0&a..."
 						download from "https://github.com/LIA-Network/Downloader-MC-Files/raw/master/Customify.sk" to "plugins/Skript/scripts/Customify.sk"
-						execute console command "/sk reload %arg-2%.sk"
+						execute console command "/sk reload Customify.sk"
 						send "{@prefix} &aDownloaded &e&oCustomify PTB v1.0.0&a!"
 
 						wait 2 seconds
 
 						send "{@prefix} &aDownloading &e&oCustomify PTB Data v1.0.0&a..."
 						download from "https://github.com/LIA-Network/Downloader-MC-Files/raw/master/CustomifyData.zip" to "plugins/Skript/scripts/CustomifyData.zip"
-						extract "plugins/Skript/scripts/CustomifyData.zip" to "plugins/Skript/scripts/"
+						#extract "plugins/Skript/scripts/CustomifyData.zip" to "plugins/Skript/scripts/"
+						send "{@prefix} &ePlease extract &6CustomifyData.zip in your scripts folder!"
 						send "{@prefix} &aDownloaded &e&oCustomify PTB Data v1.0.0&a!"
-
-						send "{@prefix} &ePlease use &6'/sk reload %arg-2%&6.sk'"
 					else:
 						send "{@prefix} &cThe system administrator has LIA Network Scripts disabled, please contact them to enable them!"
 				if argument 3 is not set:
 					if {@AllowLIANetworkScripts} is true:
 						send "{@prefix} &aDownloading &e&oCustomify PTB v1.0.0&a..."
 						download from "https://github.com/LIA-Network/Downloader-MC-Files/raw/master/Customify.sk" to "plugins/Skript/scripts/Customify.sk"
-						execute console command "/sk reload %arg-2%.sk"
+						execute console command "/sk reload Customify.sk"
 						send "{@prefix} &aDownloaded &e&oCustomify PTB v1.0.0&a!"
 
 						wait 2 seconds
 
 						send "{@prefix} &aDownloading &e&oCustomify PTB Data v1.0.0&a..."
 						download from "https://github.com/LIA-Network/Downloader-MC-Files/raw/master/CustomifyData.zip" to "plugins/Skript/scripts/CustomifyData.zip"
-						extract "plugins/Skript/scripts/CustomifyData.zip" to "plugins/Skript/scripts/"
+						#extract "plugins/Skript/scripts/CustomifyData.zip" to "plugins/Skript/scripts/"
 						send "{@prefix} &aDownloaded &e&oCustomify PTB Data v1.0.0&a!"
-
-						send "{@prefix} &ePlease use &6'/sk reload %arg-2%&6.sk'"
+						send "{@prefix} &ePlease extract &6CustomifyData.zip in your scripts folder!"
 					else:
 						send "{@prefix} &cThe system administrator has LIA Network Scripts disabled, please contact them to enable them!"
+
+
+
+
+
 
 			if argument 2 is "list":
 				send "&eDownloader &7| &eDownload List &6» %{Downloader::Custom::List::*}%"
@@ -214,7 +220,7 @@ command /downloader [<text>] [<text>] [<text>] [<text>] [<text>]:
 					else:
 						send "{@prefix} &cPlease use '--confirm' to confirm the destructive action."
 
-on join:
+#on join:
 	#UpdateCheck(player)
 
 function UpdateCheck(p: player):
@@ -235,6 +241,6 @@ on script load:
 		create "plugins/Skript/scripts/Downloads/test.sk" # Create temp file to create folder without WildSkript so it works on 1.14.4.
 		delete "plugins/Skript/scripts/Downloads/test.sk" # Remove that temp file that created the folder.
 		
-on script load:
-	download from "https://github.com/Red-Seven-Network/MC-Files/blob/master/Downloader/_latest/Downloader.sk" to "plugins/Skript/scripts/Downloader.sk"
-	execute console command "/sk reload Downloader.sk"
+#on script load:
+	#download from "https://github.com/Red-Seven-Network/MC-Files/blob/master/Downloader/_latest/Downloader.sk" to "plugins/Skript/scripts/Downloader.sk"
+	#execute console command "/sk reload Downloader.sk"
